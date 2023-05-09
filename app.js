@@ -25,10 +25,9 @@ app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('common'))
 app.use(helmet())
-app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
 app.use(cookieParser())
 app.use(cors({
-    origin: process.env.FRONT_URL,
+    origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET","POST","PUT","DLETE"],
 }))
